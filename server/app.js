@@ -1,9 +1,9 @@
-const express = require('express')
-const bodyParser = require('body-parser')
-const { makeExecutableSchema } = require('graphql-tools')
-const { graphqlExpress, graphiqlExpress } = require('apollo-server-express')
-const cors = require('cors')
-const { reject, uniqueId, find, findIndex, assign } = require('lodash')
+import express from 'express'
+import bodyParser from 'body-parser'
+import { makeExecutableSchema } from 'graphql-tools'
+import { graphqlExpress, graphiqlExpress } from 'apollo-server-express'
+import cors from 'cors'
+import { reject, uniqueId, find, findIndex, assign, omit } from 'lodash'
 
 let todos = []
 
@@ -43,9 +43,9 @@ const resolvers = {
       todos = reject(todos, { id })
       return todo
     },
-    updateTodo (_, { id, ...fields }) {
-      const index = findIndex(todos, { id })
-      const todo = assign(find(todos, { id }), fields)
+    updateTodo (_, fields) {
+      const index = findIndex(todos, { id: fields.id })
+      const todo = assign(find(todos, { id: fields.id }), omit(fields, 'id'))
       todos[index] = todo
       return todo
     }
