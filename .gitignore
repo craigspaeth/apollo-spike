@@ -57,3 +57,5 @@ typings/
 # dotenv environment variables file
 .env
 
+# Apollo, or other thing?
+.cache
