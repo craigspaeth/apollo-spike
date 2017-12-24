@@ -1,0 +1,49 @@
+{
+  "name": "apollo-spike",
+  "version": "1.0.0",
+  "description": "Playing with Apollo tools",
+  "main": "index.js",
+  "scripts": {
+    "start": "concurrently 'node index.js' 'budo client.js -- -t [ babelify --presets [ env react ] ] -p browserify-hmr'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/craigspaeth/apollo-spike.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/craigspaeth/apollo-spike/issues"
+  },
+  "homepage": "https://github.com/craigspaeth/apollo-spike#readme",
+  "dependencies": {
+    "@artsy/express-reloadable": "^1.1.2",
+    "apollo-client": "^2.0.4",
+    "apollo-client-preset": "^1.0.5",
+    "apollo-server-express": "^1.3.2",
+    "body-parser": "^1.18.2",
+    "concurrently": "^3.5.1",
+    "cors": "^2.8.4",
+    "express": "^4.16.2",
+    "graphql": "^0.12.3",
+    "graphql-tag": "^2.6.1",
+    "graphql-tools": "^2.14.1",
+    "lodash": "^4.17.4",
+    "react": "^16.2.0",
+    "react-apollo": "^2.0.4",
+    "react-dom": "^16.2.0"
+  },
+  "devDependencies": {
+    "babel": "^6.23.0",
+    "babel-core": "^6.26.0",
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-react": "^6.24.1",
+    "babelify": "^8.0.0",
+    "browserify": "^14.5.0",
+    "browserify-hmr": "^0.3.6",
+    "budo": "^10.0.4",
+    "standard": "^10.0.3",
+    "watchify": "^3.9.0"
+  }
+}
